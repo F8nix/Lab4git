@@ -1,12 +1,12 @@
 #!/bin/bash
-if [ "$1" == "--date" || "$1" == "-d" ]
+if [[ "$1" == "--date" || "$1" == "-d" ]]
 	then
 	data=$(date)
 	data=`date`
 	echo $data
 fi
 
-if [ "$1" == "--logs" || "$1" == "-l" ]
+if [[ "$1" == "--logs" || "$1" == "-l" ]]
 
 	then
 	amount=100
@@ -17,11 +17,15 @@ if [ "$1" == "--logs" || "$1" == "-l" ]
 	
 	for i in `seq 1 $amount`;
 	do
-	echo "log$i.txt $0 $(date)" > "log$i.txt"
+	if [ ! -d "log$i" ]
+	then
+	mkdir "log$i"
+	fi
+	echo "log$i.txt $0 $(date)" > "log$i/log$i.txt"
 	done
 fi
 
-if [ "$1" == "--help" || "$1" == "-h" ]
+if [[ "$1" == "--help" || "$1" == "-h" ]]
 	then
 	echo "opcje: "
 	echo "--help - wyświetl pomoc"

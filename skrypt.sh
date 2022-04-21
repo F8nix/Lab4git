@@ -34,3 +34,9 @@ if [ "$1" == "--init" ]
 	git clone "https://github.com/F8nix/Lab4git.git"
 	export PATH=$PATH:$PWD
 fi
+
+if [ "$1" == "--init" ]
+	then
+	git clone "https://github.com/F8nix/Lab4git.git"
+	export PATH=$PATH:$PWD
+fi

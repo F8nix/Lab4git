@@ -28,9 +28,11 @@ fi
 if [[ "$1" == "--help" || "$1" == "-h" ]]
 	then
 	echo "opcje: "
-	echo "--help - wyświetl pomoc"
-	echo "--date - wyświetl datę"
-	echo "--logs [liczba] - wygeneruj [liczba] logów, domyślnie 100"
+	echo "--help, -h - wyświetl pomoc"
+	echo "--date, -d - wyświetl datę"
+	echo "--logs, -l [liczba] - wygeneruj [liczba] logów, domyślnie 100"
+	echo "--init - pobierz repozytorium i zaktualizuj PATH"
+	echo "--error, -e [liczba] - wygeneruj [liczba] błędów, domyślnie 100"
 fi
 
 if [ "$1" == "--init" ]

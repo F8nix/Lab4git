@@ -1,12 +1,12 @@
 #!/bin/bash
-if [ "$1" == "--date" || "$1" == "-d" ]
+if [[ "$1" == "--date" || "$1" == "-d" ]]
 	then
 	data=$(date)
 	data=`date`
 	echo $data
 fi
 
-if [ "$1" == "--logs" || "$1" == "-l" ]
+if [[ "$1" == "--logs" || "$1" == "-l" ]]
 
 	then
 	amount=100
@@ -21,10 +21,16 @@ if [ "$1" == "--logs" || "$1" == "-l" ]
 	done
 fi
 
-if [ "$1" == "--help" || "$1" == "-h" ]
+if [[ "$1" == "--help" || "$1" == "-h" ]]
 	then
 	echo "opcje: "
 	echo "--help - wyświetl pomoc"
 	echo "--date - wyświetl datę"
 	echo "--logs [liczba] - wygeneruj [liczba] logów, domyślnie 100"
+fi
+
+if [ "$1" == "--init" ]
+	then
+	git clone "https://github.com/F8nix/Lab4git.git"
+	export PATH=$PATH:$PWD
 fi

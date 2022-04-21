@@ -7,8 +7,15 @@ if [ "$1" == "--date" ]
 fi
 
 if [ "$1" == "--logs" ]
+
 	then
-	for i in {1..100}
+	amount=100
+	if [ ! -z $2 ]
+	then
+	amount=$2
+	fi
+	
+	for i in `seq 1 $amount`;
 	do
 	echo "log$i.txt $0 $(date)" > "log$i.txt"
 	done

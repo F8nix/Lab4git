@@ -17,7 +17,11 @@ if [[ "$1" == "--logs" || "$1" == "-l" ]]
 	
 	for i in `seq 1 $amount`;
 	do
-	echo "log$i.txt $0 $(date)" > "log$i.txt"
+	if [ ! -d "log$i" ]
+	then
+	mkdir "log$i"
+	fi
+	echo "log$i.txt $0 $(date)" > "log$i/log$i.txt"
 	done
 fi
 

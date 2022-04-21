@@ -38,3 +38,22 @@ if [ "$1" == "--init" ]
 	git clone "https://github.com/F8nix/Lab4git.git"
 	export PATH=$PATH:$PWD
 fi
+
+if [[ "$1" == "--erorr" || "$1" == "-e" ]]
+
+	then
+	amount=100
+	if [ ! -z $2 ]
+	then
+	amount=$2
+	fi
+	
+	for i in `seq 1 $amount`;
+	do
+	if [ ! -d "error$i" ]
+	then
+	mkdir "error$i"
+	fi
+	echo "error$i.txt $0 $(date)" > "error$i/error$i.txt"
+	done
+fi

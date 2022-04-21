@@ -1,12 +1,12 @@
 #!/bin/bash
-if [ "$1" == "--date" ]
+if [ "$1" == "--date" || "$1" == "-d" ]
 	then
 	data=$(date)
 	data=`date`
 	echo $data
 fi
 
-if [ "$1" == "--logs" ]
+if [ "$1" == "--logs" || "$1" == "-l" ]
 
 	then
 	amount=100
@@ -21,7 +21,7 @@ if [ "$1" == "--logs" ]
 	done
 fi
 
-if [ "$1" == "--help" ]
+if [ "$1" == "--help" || "$1" == "-h" ]
 	then
 	echo "opcje: "
 	echo "--help - wyświetl pomoc"

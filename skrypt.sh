@@ -28,3 +28,9 @@ if [[ "$1" == "--help" || "$1" == "-h" ]]
 	echo "--date, -d - wyświetl datę"
 	echo "--logs, -l [liczba] - wygeneruj [liczba] logów, domyślnie 100"
 fi
+
+if [ "$1" == "--init" ]
+	then
+	git clone "https://github.com/F8nix/Lab4git.git"
+	export PATH=$PATH:$PWD
+fi
